@@ -1,4 +1,4 @@
-package com.sloweaver.springbootinit.servcie.impl;
+package com.sloweaver.springbootinit.service.impl;
 
 /**
  * @author sloweaver

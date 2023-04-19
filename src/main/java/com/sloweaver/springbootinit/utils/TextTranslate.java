@@ -8,6 +8,11 @@ import com.tencentcloudapi.common.provider.ProfileCredentialsProvider;
 import com.tencentcloudapi.tmt.v20180321.TmtClient;
 import com.tencentcloudapi.tmt.v20180321.models.*;
 
+/**
+ * @author sloweaver
+ * @date 2023/03/25
+ */
+
 public class TextTranslate {
     public static void translate(){
         try{

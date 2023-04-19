@@ -1,4 +1,4 @@
-package com.sloweaver.springbootinit.model.enity;
+package com.sloweaver.springbootinit.model.entity;
 
 /**
  * @author sloweaver

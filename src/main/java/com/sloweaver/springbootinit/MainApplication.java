@@ -8,8 +8,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 
-// todo 如需开启 Redis，须移除 exclude 中的内容
-@SpringBootApplication(exclude = {RedisAutoConfiguration.class})
+/**
+ * @author sloweaver
+ * @date 2023/03/25
+ * todo 如需开启 Redis，须移除 exclude 中的内容
+ */
+@SpringBootApplication(exclude = {})
 @MapperScan("com.sloweaver.springbootinit.mapper")
 @EnableScheduling
 @EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
