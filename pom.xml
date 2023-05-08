@@ -140,7 +140,7 @@
         <dependency>
             <groupId>com.tencentcloudapi</groupId>
             <artifactId>tencentcloud-sdk-java-tmt</artifactId>
-            <version>LATEST</version>
+            <version>3.1.731</version>
         </dependency>
     </dependencies>
 
