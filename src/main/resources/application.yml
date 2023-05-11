@@ -44,14 +44,14 @@ server:
   address: 0.0.0.0
   port: 8101
   servlet:
-    context-path: /api
+    context-path: /zhangsfamily
     # cookie 30 天过期
     session:
       cookie:
         max-age: 2592000
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:

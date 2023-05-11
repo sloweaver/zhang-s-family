@@ -6,18 +6,18 @@
 
     <resultMap id="BaseResultMap" type="com.sloweaver.springbootinit.model.entity.TencentTranslation">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="content_before_translation" column="content_before_translation" jdbcType="VARCHAR"/>
-            <result property="content_after_translation" column="content_after_translation" jdbcType="VARCHAR"/>
-            <result property="language_before_translation" column="language_before_translation" jdbcType="VARCHAR"/>
-            <result property="language_after_translation" column="language_after_translation" jdbcType="VARCHAR"/>
-            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="is_delete" column="is_delete" jdbcType="TINYINT"/>
+            <result property="sourceText" column="source_text" jdbcType="VARCHAR"/>
+            <result property="targetText" column="target_text" jdbcType="VARCHAR"/>
+            <result property="sourceLanguage" column="source_language" jdbcType="VARCHAR"/>
+            <result property="targetLanguage" column="target_language" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,content_before_translation,content_after_translation,
-        language_before_translation,language_after_translation,create_time,
+        id,source_text,target_text,
+        source_language,target_language,create_time,
         update_time,is_delete
     </sql>
 </mapper>
