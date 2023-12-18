@@ -29,10 +29,10 @@ create table if not exists tencent_translation
 (
     id                          bigint auto_increment
         primary key,
-    content_before_translation  text                               not null comment '翻译前内容',
-    content_after_translation   text                               not null comment '翻译后内容',
-    language_before_translation varchar(256)                       not null comment '翻译前语言',
-    language_after_translation  varchar(256)                       not null comment '翻译后的语言',
+    source_text  text                               not null comment '翻译前内容',
+    target_text   text                               not null comment '翻译后内容',
+    source_language varchar(256)                       not null comment '翻译前语言',
+    target_language  varchar(256)                       not null comment '翻译后的语言',
     create_time                 datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     update_time                 datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP,
     is_delete                   tinyint  default 0                 not null

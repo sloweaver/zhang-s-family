@@ -1,11 +1,11 @@
 package com.sloweaver.springbootinit.service;
 
-import com.sloweaver.springbootinit.model.dto.tencenttranslation.TencentTranslationRequest;
-import com.sloweaver.springbootinit.model.entity.TencentTranslation;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.apache.ibatis.annotations.Mapper;
+import com.sloweaver.springbootinit.model.dto.askAi.AskAiRequest;
+import com.sloweaver.springbootinit.model.dto.tencenttranslation.TencentTranslationRequest;
+import com.sloweaver.springbootinit.model.entity.AskAi;
+import com.sloweaver.springbootinit.model.entity.TencentTranslation;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 /**
 * @author Administrator
@@ -13,15 +13,14 @@ import org.springframework.stereotype.Service;
 * @createDate 2023-05-10 22:15:43
 */
 @Component
-public interface TencentTranslationService extends IService<TencentTranslation> {
-
+public interface AskAiService extends IService<AskAi> {
 
     /**
-     * translation sourceText
-     * @param tencentTranslationRequest
+     * 询问单句
+     * @param askAiRequest
      * @return
      */
-    String translation(TencentTranslationRequest tencentTranslationRequest);
+    String askSingle(AskAiRequest askAiRequest);
 
 
 }

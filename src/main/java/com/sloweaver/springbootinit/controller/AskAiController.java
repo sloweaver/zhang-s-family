@@ -4,14 +4,15 @@ import com.sloweaver.springbootinit.common.BaseResponse;
 import com.sloweaver.springbootinit.common.ErrorCode;
 import com.sloweaver.springbootinit.common.ResultUtils;
 import com.sloweaver.springbootinit.exception.BusinessException;
+import com.sloweaver.springbootinit.model.dto.askAi.AskAiRequest;
 import com.sloweaver.springbootinit.model.dto.tencenttranslation.TencentTranslationRequest;
+import com.sloweaver.springbootinit.model.entity.AskAi;
 import com.sloweaver.springbootinit.model.entity.TencentTranslation;
+import com.sloweaver.springbootinit.model.vo.AskAiVO;
 import com.sloweaver.springbootinit.model.vo.TencentTranslationVO;
 import com.sloweaver.springbootinit.service.TencentTranslationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,31 +28,22 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/translation")
 @Slf4j
-public class TencentTranslationController {
+public class AskAiController {
     @Resource
     TencentTranslationService tencentTranslationService;
 
     @PostMapping("/translationAndSave")
-    public BaseResponse<TencentTranslationVO> translationAndSave(@RequestBody TencentTranslationRequest tencentTranslationRequest) {
+    public BaseResponse<AskAiVO> askAiSingle(@RequestBody AskAiRequest askAiRequest) {
 
-        if (tencentTranslationRequest == null) {
+        if (askAiRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
 
-        TencentTranslationVO tencentTranslationVO = new TencentTranslationVO();
+        AskAiVO askAiVO = new AskAiVO();
 
-        TencentTranslation tencentTranslation = new TencentTranslation();
-        BeanUtils.copyProperties(tencentTranslationRequest,tencentTranslation);
-        String targetText = tencentTranslationService.translation(tencentTranslationRequest);
-        tencentTranslation.setTargetText(targetText);
+        AskAi askAi = new AskAi();
 
-        // 用于返回的VO对象，只需要翻译结果即可
-        tencentTranslationVO.setTargetText(targetText);
-
-        // 向记录表中插入数据
-        tencentTranslationService.save(tencentTranslation);
-
-        return ResultUtils.success(tencentTranslationVO);
+        return ResultUtils.success(askAiVO);
     }
 
 }
